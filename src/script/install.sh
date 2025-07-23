@@ -4,7 +4,7 @@
 yum install git -y
 
 # Clone the repository
-https://github.com/Khahory/yt-ninjas.git
+git clone https://github.com/Khahory/yt-ninjas.git
 
 # Install Node.js using NVM (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
