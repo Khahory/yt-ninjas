@@ -1,6 +1,6 @@
 import http from 'http';
 
-const port = 80;
+const port = 3000;
 
 const server = http.createServer((req, res) => {
   const path = req.url ?? '/';
@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
       <html>
         <head><meta charset="UTF-8"></head>
         <body style="font-family: monospace; background: #1a0000; color: #ff4d4d; padding: 20px;">
-          🏰 <strong>Has llegado al Castillo Escarlata, custodiado por Minato Red 🟥 desde el puerto 80.</strong><br>
+          🏰 <strong>Has llegado al Castillo Escarlata, custodiado por Minato Red 🟥 desde el puerto ${port}.</strong><br>
           Ningún visitante cruza estas murallas sin enfrentarse a mi técnica ancestral.
         </body>
       </html>
