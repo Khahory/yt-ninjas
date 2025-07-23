@@ -1,16 +1,24 @@
 #!/bin/bash
 
-# Install git
-yum install git -y
+# Habilitar logging detallado
+set -xe
 
-# Clone the repository
-git clone https://github.com/Khahory/yt-ninjas.git
+# Instalar Git
+dnf install -y git
 
-# Install Node.js using NVM (Node Version Manager)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-source ~/.bashrc
-nvm install --lts
+# Clonar tu repo
+git clone https://github.com/Khahory/yt-ninjas.git /home/ec2-user/yt-ninjas
+
+# Instalar Node.js 18 desde Nodesource (compatible y LTS)
+curl -fsSL https://rpm.nodesource.com/setup_22.x | bash -
+dnf install -y nodejs
+
+# Verificar instalación
 node -v
 npm -v
 
-touch ~/creado-automaticamente.txt
+# Cambiar propietario del repo clonado (muy importante en user-data)
+chown -R ec2-user:ec2-user /home/ec2-user/yt-ninjas
+
+# Crear un archivo de prueba
+touch /home/ec2-user/creado-automaticamente.txt
