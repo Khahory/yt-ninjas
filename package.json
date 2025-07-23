@@ -8,6 +8,7 @@
     "start:8080": "ts-node src/defensa8080.ts",
     "start:9090": "ts-node src/defensa9090.ts",
     "start:client": "ts-node src/ninjaClient.ts",
+    "start": "ts-node src/index.ts",
 
     "start:8080:daemon": "npm run start:8080 &",
     "start:9090:daemon": "npm run start:9090 &",
