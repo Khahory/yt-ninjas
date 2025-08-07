@@ -39,7 +39,7 @@ async function main() {
       });
     });
 
-    req.setTimeout(2000, () => {
+    req.setTimeout(1500, () => {
       console.error('Timeout: el servidor tardó más de 2 segundos en responder.');
       req.destroy();
       rl.close();
