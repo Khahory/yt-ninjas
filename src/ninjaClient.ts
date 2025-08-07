@@ -33,14 +33,14 @@ async function main() {
       let data = '';
       res.on('data', chunk => (data += chunk));
       res.on('end', () => {
-        console.log(`Respuesta del servidor en ${hostname}:${port}/ataque:`);
+        console.log(`✅ Respuesta del servidor en ${hostname}:${port}/ataque:`);
         console.log(data);
         rl.close();
       });
     });
 
     req.setTimeout(1500, () => {
-      console.error('Timeout: el servidor tardó más de 2 segundos en responder.');
+      console.error('❌ No se recibió respuesta en 1.5 segundos. El ataque ha fallado.');
       req.destroy();
       rl.close();
     });
