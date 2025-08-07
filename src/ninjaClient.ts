@@ -39,6 +39,12 @@ async function main() {
       });
     });
 
+    req.setTimeout(2000, () => {
+      console.error('Timeout: el servidor tardó más de 2 segundos en responder.');
+      req.destroy();
+      rl.close();
+    });
+
     req.on('error', err => {
       console.error('Error al consultar /ataque:', err.message);
       rl.close();
