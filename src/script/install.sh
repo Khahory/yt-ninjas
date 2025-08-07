@@ -20,5 +20,8 @@ npm -v
 # Cambiar propietario del repo clonado (muy importante en user-data)
 chown -R ec2-user:ec2-user /home/ec2-user/yt-ninjas
 
+# Instalar dependencias del proyecto
+npm install --prefix /home/ec2-user/yt-ninjas
+
 # Crear un archivo de prueba
 touch /home/ec2-user/creado-automaticamente.txt
