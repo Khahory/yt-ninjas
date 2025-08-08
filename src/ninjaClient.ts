@@ -39,8 +39,8 @@ async function main() {
       });
     });
 
-    req.setTimeout(1500, () => {
-      console.error('❌ No se recibió respuesta en 1.5 segundos. El ataque ha fallado.');
+    req.setTimeout(1000, () => {
+      console.error('❌ No se recibió respuesta en 1 segundos. El ataque ha fallado.');
       req.destroy();
       rl.close();
     });
