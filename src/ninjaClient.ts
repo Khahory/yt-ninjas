@@ -26,23 +26,24 @@ async function main() {
       hostname,
       port,
       path: '/ataque',
-      method: 'GET'
+      method: 'GET',
+      timeout: 3000,
     };
 
     const req = http.request(options, res => {
       let data = '';
       res.on('data', chunk => (data += chunk));
       res.on('end', () => {
+        if (res.statusCode !== 200) {
+          console.error(`❌ No se recibió respuesta en 1 segundos. El ataque ha fallado. 😨`);
+          rl.close();
+          return;
+        }
+
         console.log(`✅ Respuesta del servidor en ${hostname}:${port}/ataque:`);
         console.log(data);
         rl.close();
       });
-    });
-
-    req.setTimeout(1000, () => {
-      console.error('❌ No se recibió respuesta en 1 segundos. El ataque ha fallado.');
-      req.destroy();
-      rl.close();
     });
 
     req.on('error', err => {
