@@ -12,7 +12,6 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
     res.end(`
       <html>
-        <head><meta charset="UTF-8"><title>Lupa Blue</title></head>
         <body style="font-family: monospace; background: #0a1f44; color: #5ea4e9; padding: 20px;">
           🛡️ <strong>Soy Lupa Blue 🟦 del puerto 8080.</strong><br>
           Nadie pasa sin enfrentar mi técnica secreta.<br><br>
