@@ -27,7 +27,7 @@ async function main() {
       port,
       path: '/ataque',
       method: 'GET',
-      timeout: 3000,
+      timeout: 1000,
     };
 
     const req = http.request(options, res => {
