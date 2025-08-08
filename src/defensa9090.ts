@@ -20,7 +20,7 @@ const server = http.createServer((req, res) => {
   } else if (path === '/ataque') {
     // Respuesta para API (texto plano o JSON)
     res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
-    res.end('⚔️ ¡Has intentado atacar a Takeshi! Pero ya estaba preparado...');
+    res.end('⚔️ 🟩¡Has intentado atacar a Takeshi! Pero ya estaba preparado...');
     console.log(`⚔️ 🟩 Alerta de ataque en ${new Date().toISOString()}`);
   } else {
     res.writeHead(404, {'Content-Type': 'text/plain; charset=utf-8'});
