@@ -34,16 +34,15 @@ async function main() {
       let data = '';
       res.on('data', chunk => (data += chunk));
       res.on('end', () => {
-        if (res.statusCode !== 200) {
-          console.error(`❌ No se recibió respuesta en 1 segundos. El ataque ha fallado. 😨`);
-          rl.close();
-          return;
-        }
-
         console.log(`✅ Respuesta del servidor en ${hostname}:${port}/ataque:`);
         console.log(data);
         rl.close();
       });
+    });
+
+    req.on('timeout', () => {
+      console.error(`❌ No se recibió respuesta en 1 segundos. El ataque ha fallado. 😨`);
+      req.destroy();
     });
 
     req.on('error', err => {
