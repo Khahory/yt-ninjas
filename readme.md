@@ -1,18 +1,47 @@
-### Run daemon
+# 🏰 Castillo Escarlata
+
+Un servidor web simple con contador interactivo, defendido por Minato Red 🟥.
+
+## 🐳 Docker Commands
+
+### Construir la imagen
 ```bash
-npm run start:8080 &
-
-npm run start:9090 &
-
-npm run start:client &
+docker build -t castillo-escarlata .
 ```
 
-### Check jobs
+### Iniciar el servidor
 ```bash
-jobs -l
+docker run -d -p 3000:3000 --name castillo castillo-escarlata
 ```
 
-### Stop daemon
+### Detener el servidor
 ```bash
-kill <PROCESS_ID>
+docker stop castillo
 ```
+
+### Eliminar el contenedor
+```bash
+docker rm castillo
+```
+
+### Ver logs
+```bash
+docker logs castillo
+```
+
+## 🚀 Acceso
+
+Una vez iniciado, visita: **http://localhost:3000**
+
+## 🎮 Funcionalidad
+
+- ⚔️ Botón interactivo para incrementar contador
+- 🔄 Contador se reinicia al recargar la página
+- 🎨 Interfaz moderna y responsiva
+- 🛡️ Defendido desde el puerto 3000
+
+## 📝 Notas
+
+- El contador se reinicia automáticamente al recargar la página
+- El servidor está configurado para el puerto 3000 por defecto
+- Puedes cambiar el puerto usando la variable de entorno `PORT`
