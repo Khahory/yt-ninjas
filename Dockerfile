@@ -13,15 +13,19 @@ COPY . .
 # Build the application
 RUN npm run build
 
-# Stage 2: Create the final image
-FROM builder AS runner
-
-WORKDIR /app
-
-# Copy only the necessary files from the builder stage
-COPY package.json package-lock.json ./
-COPY --from=builder /app/dist ./
-
+# baddddddd
 EXPOSE 8080
-
 CMD node index.js
+
+## Stage 2: Create the final image
+#FROM builder AS runner
+#
+#WORKDIR /app
+#
+## Copy only the necessary files from the builder stage
+#COPY package.json package-lock.json ./
+#COPY --from=builder /app/dist ./
+#
+#EXPOSE 8080
+#
+#CMD node index.js
