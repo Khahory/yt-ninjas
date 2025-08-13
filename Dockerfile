@@ -1,8 +1,8 @@
 # Stage 1: Build the application
-FROM node:20.11.0-alpine AS builder
+FROM python:3.11.13-alpine3.22 AS builder
 
 WORKDIR /app
-
+RUN python -m venv venv
 # copy
 COPY package.json package-lock.json ./
 RUN npm install
