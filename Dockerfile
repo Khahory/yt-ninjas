@@ -13,6 +13,9 @@ COPY . .
 # Build the application
 RUN npm run build
 
+# Test multiple stage
+RUN touch builder.txt
+
 # baddddddd
 #CMD node dist/index.js
 
