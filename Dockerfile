@@ -16,9 +16,6 @@ RUN npm run build
 # Test multiple stage
 RUN touch builder.txt
 
-# baddddddd
-#CMD node dist/index.js
-
 ## Stage 2: Create the final image
 FROM builder AS runner
 
