@@ -9,7 +9,6 @@
     "start:9090": "ts-node src/defensa9090.ts",
     "start:client": "ts-node src/ninjaClient.ts",
     "start": "ts-node src/index.ts",
-
     "start:8080:daemon": "npm run start:8080 &",
     "start:9090:daemon": "npm run start:9090 &",
     "start:client:daemon": "npm run start:client &"
@@ -24,6 +23,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "dotenv": "^17.2.1",
     "http": "^0.0.1-security",
     "http-types": "^0.6.1"
   }

@@ -22,8 +22,9 @@ WORKDIR /app
 
 # Copy only the necessary files from the builder stage
 COPY package.json package-lock.json ./
-COPY --from=builder /app/dist ./
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/node_modules ./node_modules
 
 RUN apk add --no-cache curl bash
 
-CMD node index.js
+CMD node dist/index.js

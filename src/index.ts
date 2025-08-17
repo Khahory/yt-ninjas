@@ -1,8 +1,14 @@
 import http from 'http';
 import { IncomingMessage, ServerResponse } from 'http';
+import { config } from 'dotenv';
+config();
 
 const port = process.env.PORT || 3000;
 let contador = 0;
+
+// Configuración de variables de entorno
+console.log("process.env.PASSWORD", process.env.PASSWORD);
+console.log("process.env.USERNAME", process.env.USERNAME);
 
 function sendJSON(res: ServerResponse, status: number, obj: any): void {
   const payload = JSON.stringify(obj);
