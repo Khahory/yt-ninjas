@@ -24,4 +24,6 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 COPY --from=builder /app/dist ./
 
+RUN apk add --no-cache curl bash
+
 CMD node index.js
