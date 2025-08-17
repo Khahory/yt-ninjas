@@ -2,8 +2,7 @@
 FROM node:20.11.0-alpine AS builder
 
 WORKDIR /app
-RUN python -m venv venv
-# copy
+
 COPY package.json package-lock.json ./
 RUN npm install
 
@@ -17,7 +16,7 @@ RUN npm run build
 RUN touch builder.txt
 
 ## Stage 2: Create the final image
-FROM builder AS runner
+FROM node:20.11.0-alpine AS runner
 
 WORKDIR /app
 
