@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM python:3.11.13-alpine3.22 AS builder
+FROM node:20.11.0-alpine AS builder
 
 WORKDIR /app
 RUN python -m venv venv
