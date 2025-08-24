@@ -23,8 +23,10 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@types/pg": "^8.15.5",
     "dotenv": "^17.2.1",
     "http": "^0.0.1-security",
-    "http-types": "^0.6.1"
+    "http-types": "^0.6.1",
+    "pg": "^8.16.3"
   }
 }

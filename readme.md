@@ -39,6 +39,23 @@ Una vez iniciado, visita: **http://localhost:3000**
 - 🔄 Contador se reinicia al recargar la página
 - 🎨 Interfaz moderna y responsiva
 - 🛡️ Defendido desde el puerto 3000
+- 🗄️ Endpoint `/test-db` para probar conexión a PostgreSQL
+
+## 🗄️ Base de Datos
+
+### Variables de entorno para PostgreSQL
+```bash
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=postgres
+DB_USER=postgres
+DB_PASSWORD=tu_password_postgres
+```
+
+### Probar conexión
+```bash
+curl http://localhost:3000/test-db
+```
 
 ## 📝 Notas
 
