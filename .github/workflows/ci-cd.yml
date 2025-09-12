@@ -3,6 +3,8 @@ name: 🚀 CI/CD Pipeline
 on:
   pull_request:
     branches: [ main ]
+  push:
+    branches: [ main ]
 
 env:
   IMAGE_NAME: yt-ninjas
@@ -62,6 +64,6 @@ jobs:
           pm2 delete all || echo "No PM2 process to delete"
           npm run pm2
           echo "Application deployed with PM2"
-                    
+          
           echo "Deployment completed ✅" 
           '
