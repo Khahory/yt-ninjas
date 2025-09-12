@@ -8,13 +8,8 @@ on:
         required: false
         type: string
         default: '24'
-      run-tests:
-        description: 'Run tests'
-        required: false
-        type: boolean
-        default: true
-      run-lint:
-        description: 'Run linting'
+      run-security-scan:
+        description: 'Run security scan'
         required: false
         type: boolean
         default: true
@@ -38,11 +33,3 @@ jobs:
       - name: 🔒 Security audit
         if: ${{ inputs.run-security-scan }}
         run: npm audit --audit-level moderate || echo "No vulnerabilities found"
-
-      - name: 📈 Upload artifacts
-        if: ${{ inputs.run-tests && always() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-results
-          path: |
-            test-results.xml
