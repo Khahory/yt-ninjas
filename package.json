@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pm2": "pm2 start dist/index.js --name ninja --watch",
     "build": "tsc",
     "start:8080": "ts-node src/defensa8080.ts",
     "start:9090": "ts-node src/defensa9090.ts",
@@ -18,15 +19,16 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@types/node": "^24.1.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "@types/node": "24.1.0",
+    "ts-node": "10.9.2",
+    "typescript": "5.8.3"
   },
   "dependencies": {
-    "@types/pg": "^8.15.5",
-    "dotenv": "^17.2.1",
-    "http": "^0.0.1-security",
-    "http-types": "^0.6.1",
-    "pg": "^8.16.3"
+    "@types/pg": "8.15.5",
+    "dotenv": "17.2.1",
+    "http": "0.0.1-security",
+    "http-types": "0.6.1",
+    "pg": "8.16.3",
+    "pm2": "6.0.10"
   }
 }
