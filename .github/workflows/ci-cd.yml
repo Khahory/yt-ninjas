@@ -50,6 +50,7 @@ jobs:
           
           # Pull latest changes from git
           cd '"${DIRECTORY}"' || { echo "Directory not found"; exit 1; }
+          git reset --hard HEAD || { echo "git reset failed"; exit 1; }
           git pull origin main || { echo "git pull failed"; exit 1; }
           echo "Pulled latest changes from git"
           
