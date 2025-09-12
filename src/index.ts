@@ -79,10 +79,7 @@ const server = http.createServer(async (req: IncomingMessage, res: ServerRespons
         <body style="font-family: monospace; background:#1a0000; color:#ff4d4d; padding:20px;">
           🏰 <strong>Has llegado al Castillo Escarlata, custodiado por Minato Red 🟥 desde el puerto ${port}.</strong>
           <p>Ningún visitante cruza estas murallas sin enfrentarse a mi técnica ancestral.</p>
-          <img src="https://theanarchistsite.wordpress.com/wp-content/uploads/2019/08/giphy.gif?w=700" alt="hxh">
-          <img src="https://theanarchistsite.wordpress.com/wp-content/uploads/2019/08/giphy.gif?w=700" alt="hxh">
-          <img src="https://theanarchistsite.wordpress.com/wp-content/uploads/2019/08/giphy.gif?w=700" alt="hxh">
-          <img src="https://theanarchistsite.wordpress.com/wp-content/uploads/2019/08/giphy.gif?w=700" alt="hxh">
+<!--          <img src="https://theanarchistsite.wordpress.com/wp-content/uploads/2019/08/giphy.gif?w=700" alt="hxh">-->
 
           <div style="margin-top:20px; text-align:center;">
             <button id="btn" style="padding:12px 24px; background:#ff4d4d; color:white; border:none; border-radius:8px; cursor:pointer; font-size:18px; font-weight:bold; box-shadow:0 4px 8px rgba(255,77,77,0.3); transition:all 0.2s; margin-right:10px;">
