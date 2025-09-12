@@ -60,8 +60,7 @@ jobs:
           npm run build || { echo "Build failed"; exit 1; }
           
           # Run with pm2
-          pm2 kill || echo "No PM2 process to kill"
-          pm2 delete all || echo "No PM2 process to delete"
+          npm cleanup || { echo "PM2 cleanup failed"; exit 1; }
           npm run pm2 || { echo "PM2 start failed"; exit 1; }
           echo "Application deployed with PM2"
           
