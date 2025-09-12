@@ -1,3 +1,5 @@
+[![🚀 CI/CD Pipeline](https://github.com/Khahory/yt-ninjas/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Khahory/yt-ninjas/actions/workflows/ci-cd.yml)
+
 # 🏰 Castillo Escarlata
 
 Un servidor web simple con contador interactivo, defendido por Minato Red 🟥.

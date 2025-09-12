@@ -45,7 +45,7 @@ jobs:
           # SSH connect to the server and deploy
           echo "SSH Connecting to $USER@$HOST"
           echo "$PRIVATE_KEY" > github-ec2.pem && chmod 600 github-ec2.pem
-          ssh -o StrictHostKeyChecking=no -i github-ec2.pem ${USER}@${HOST} '
+          ssh -o StrictHostKeyChecking=no -o ConnectTimeout=5 -i github-ec2.pem ${USER}@${HOST} '
           echo "Current directory: $(pwd)"
           
           # Pull latest changes from git
