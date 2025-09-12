@@ -9,7 +9,7 @@ on:
 env:
   IMAGE_NAME: yt-ninjas
   AWS_REGION: us-east-1
-  EC2_HOST: ec2-54-90-182-173.compute-1.amazonaws.com
+  EC2_HOST: ec2-54-159-95-146.compute-1.amazonaws.com
   EC2_USER: ec2-user
   DIRECTORY: /home/ec2-user/yt-ninjas
 
