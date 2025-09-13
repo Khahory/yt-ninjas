@@ -29,19 +29,12 @@ jobs:
     needs: build-and-test
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     steps:
-      - name: 📥 Checkout code
-        uses: actions/checkout@v5
-
-      - name: 🚀 Deploy
+      - name: 🚀 Deploy to EC2
         env:
           PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
           HOST: ${{ env.EC2_HOST }}
           USER: ${{ env.EC2_USER }}
         run: |
-          # Use the SHA short format (7 chars) to match
-          SHORT_SHA=${GITHUB_SHA:0:7}
-          IMAGE_TAG="main-${SHORT_SHA}"
-          
           # SSH connect to the server and deploy
           echo "SSH Connecting to $USER@$HOST"
           echo "$PRIVATE_KEY" > github-ec2.pem && chmod 600 github-ec2.pem
